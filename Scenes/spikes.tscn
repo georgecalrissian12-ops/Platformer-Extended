@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bvd2gjc1fakc8"]
+
+[ext_resource type="Texture2D" uid="uid://dikr7yrcjh8k5" path="res://Assets/Spikes.png" id="1_gwqs2"]
+[ext_resource type="PackedScene" uid="uid://dwmd6yiam2ge6" path="res://Scenes/death_zone.tscn" id="2_0qgod"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qvr35"]
+size = Vector2(16, 6)
+
+[node name="Spikes" type="Node2D" unique_id=804682172]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=622585249]
+position = Vector2(0, -8)
+texture = ExtResource("1_gwqs2")
+
+[node name="DeathZone" parent="." unique_id=288316921 instance=ExtResource("2_0qgod")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone" unique_id=1704588020]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_qvr35")
+debug_color = Color(0, 0.6, 0.69803923, 0.27058825)

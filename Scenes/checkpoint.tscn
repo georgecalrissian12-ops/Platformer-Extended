@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://cdog3uc8lsk38"]
+
+[ext_resource type="Script" uid="uid://cijrdf0fty4fg" path="res://Scripts/checkpoint.gd" id="1_2cwi7"]
+[ext_resource type="Texture2D" uid="uid://cr0fktbx6kdqd" path="res://Assets/BalloonSpriteSheet.png" id="1_lbcco"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2cwi7"]
+radius = 15.033297
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e75gc"]
+atlas = ExtResource("1_lbcco")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i1pff"]
+atlas = ExtResource("1_lbcco")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_opoc8"]
+atlas = ExtResource("1_lbcco")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l0c30"]
+atlas = ExtResource("1_lbcco")
+region = Rect2(48, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w8ggu"]
+atlas = ExtResource("1_lbcco")
+region = Rect2(64, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_naa5w"]
+atlas = ExtResource("1_lbcco")
+region = Rect2(64, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ra75"]
+atlas = ExtResource("1_lbcco")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cyhdq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e75gc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i1pff")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_opoc8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l0c30")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w8ggu")
+}],
+"loop": false,
+"name": &"Activate",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_naa5w")
+}],
+"loop": true,
+"name": &"Active",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ra75")
+}],
+"loop": true,
+"name": &"Inactive",
+"speed": 5.0
+}]
+
+[node name="Checkpoint" type="Area2D" unique_id=1962480611]
+collision_mask = 2
+script = ExtResource("1_2cwi7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2043392419]
+shape = SubResource("CircleShape2D_2cwi7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1264391462]
+sprite_frames = SubResource("SpriteFrames_cyhdq")
+animation = &"Inactive"
+autoplay = "Inactive"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

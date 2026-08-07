@@ -1,0 +1,184 @@
+[gd_scene format=3 uid="uid://dtm5etir53d38"]
+
+[ext_resource type="Texture2D" uid="uid://chi28p08bdj8w" path="res://Assets/Game Screenshot1.png" id="1_1rerr"]
+[ext_resource type="Script" uid="uid://pg8v41ujrj3j" path="res://Scenes/menu.gd" id="1_cayip"]
+[ext_resource type="FontFile" uid="uid://bkpug5iq74u7i" path="res://Assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="2_xhh6f"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cayip"]
+bg_color = Color(0.8689251, 0.31290513, 0.94511265, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.08479638, 0.096069075, 0.6385263, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 1
+shadow_offset = Vector2(5.28, 3.385)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_158mb"]
+bg_color = Color(0.41887087, 0.021039683, 0.46762514, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.08479638, 0.096069075, 0.6385263, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 1
+shadow_offset = Vector2(5.28, 3.385)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wwsa2"]
+bg_color = Color(0.47418964, 0.02650291, 0.5275447, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.08479638, 0.096069075, 0.6385263, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 1
+shadow_offset = Vector2(5.28, 3.385)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jsrd8"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="Menu" type="Control" unique_id=1408057145]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cayip")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1470741887]
+modulate = Color(0.41598046, 0.41598043, 0.4159804, 1)
+position = Vector2(583.5, 332)
+scale = Vector2(2.0862675, 2.167702)
+texture = ExtResource("1_1rerr")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=508047592]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -173.5
+offset_top = -115.5
+offset_right = 173.5
+offset_bottom = 115.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="Start Button" type="Button" parent="VBoxContainer" unique_id=1464624672]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_xhh6f")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_cayip")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_158mb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wwsa2")
+text = "Start"
+
+[node name="Level Button" type="Button" parent="VBoxContainer" unique_id=1327072027]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_xhh6f")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_cayip")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_158mb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wwsa2")
+text = "Level Select"
+
+[node name="Quit Button" type="Button" parent="VBoxContainer" unique_id=1413689956]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_xhh6f")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_cayip")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_158mb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wwsa2")
+text = "Quit"
+
+[node name="LevelMenuContainer" type="VBoxContainer" parent="." unique_id=912717592]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -184.0
+offset_top = -87.5
+offset_right = 184.0
+offset_bottom = 87.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 17
+
+[node name="OptionButton" type="OptionButton" parent="LevelMenuContainer" unique_id=363391579]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_xhh6f")
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxFlat_cayip")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_158mb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wwsa2")
+alignment = 1
+selected = 0
+item_count = 3
+popup/item_0/text = "Levels"
+popup/item_0/id = 0
+popup/item_1/text = "Level 1"
+popup/item_1/id = 1
+popup/item_2/text = "Level 2"
+popup/item_2/id = 2
+
+[node name="Quit Button2" type="Button" parent="LevelMenuContainer" unique_id=1527380508]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_xhh6f")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_cayip")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_158mb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wwsa2")
+text = "Quit"
+
+[node name="Label" type="Label" parent="." unique_id=439226823]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -79.0
+offset_top = -211.0
+offset_right = 79.0
+offset_bottom = -188.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/shadow_offset_x = 7
+theme_override_constants/shadow_offset_y = 8
+theme_override_constants/shadow_outline_size = 7
+theme_override_fonts/font = ExtResource("2_xhh6f")
+theme_override_font_sizes/font_size = 56
+theme_override_styles/normal = SubResource("StyleBoxFlat_jsrd8")
+text = "Platformer"
+
+[connection signal="pressed" from="VBoxContainer/Start Button" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Level Button" to="." method="_on_level_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit Button" to="." method="_on_quit_button_pressed"]
+[connection signal="item_selected" from="LevelMenuContainer/OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="pressed" from="LevelMenuContainer/Quit Button2" to="." method="_on_quit_button_pressed"]

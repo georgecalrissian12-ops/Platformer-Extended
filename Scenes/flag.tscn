@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://duxyf837ymms8"]
+
+[ext_resource type="Texture2D" uid="uid://dfynk6abx4won" path="res://Assets/Flag_Spritesheet.png" id="1_snk6q"]
+[ext_resource type="Script" uid="uid://cof86gtymeusn" path="res://Scripts/flag.gd" id="1_vie08"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_snk6q"]
+size = Vector2(21, 32.5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vie08"]
+atlas = ExtResource("1_snk6q")
+region = Rect2(0, 0, 25, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cnecg"]
+atlas = ExtResource("1_snk6q")
+region = Rect2(25, 0, 25, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gusjr"]
+atlas = ExtResource("1_snk6q")
+region = Rect2(50, 0, 25, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8kv76"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vie08")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cnecg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gusjr")
+}],
+"loop": true,
+"name": &"Wave",
+"speed": 5.0
+}]
+
+[node name="Flag" type="Area2D" unique_id=1178873475]
+collision_mask = 2
+script = ExtResource("1_vie08")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=57892815]
+position = Vector2(0.5, -15.75)
+shape = SubResource("RectangleShape2D_snk6q")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1755029088]
+position = Vector2(1, -16)
+sprite_frames = SubResource("SpriteFrames_8kv76")
+animation = &"Wave"
+autoplay = "Wave"
+frame_progress = 0.02000151
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
