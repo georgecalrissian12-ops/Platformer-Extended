@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dtm5etir53d38"]
 
 [ext_resource type="Texture2D" uid="uid://chi28p08bdj8w" path="res://Assets/Game Screenshot1.png" id="1_1rerr"]
-[ext_resource type="Script" uid="uid://pg8v41ujrj3j" path="res://Scenes/menu.gd" id="1_cayip"]
+[ext_resource type="Script" uid="uid://pg8v41ujrj3j" path="res://Scripts/menu.gd" id="1_cayip"]
 [ext_resource type="FontFile" uid="uid://bkpug5iq74u7i" path="res://Assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="2_xhh6f"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cayip"]

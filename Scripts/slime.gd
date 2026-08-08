@@ -1,18 +1,31 @@
 extends Node2D
 
+enum Type {GREEN, PURPLE}
 
-const SPEED: int = 50
+
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var ray_cast_left: RayCast2D = $RayCastLeft
 @onready var ray_cast_right: RayCast2D = $RayCastRight
 
-
+@export var type: Type
 var awake: bool = false
 var direction: int
+var speed: int
 
+func set_type(new_type: Type):
+	type = new_type
+	if type == Type.GREEN:
+		speed = 100
+	elif type == Type.PURPLE:
+		speed = 50
+	
 func _ready() -> void:
 	animated_sprite_2d.play("Asleep")
+	if type == Type.GREEN:
+		speed = 100
+	elif type == Type.PURPLE:
+		speed = 50
 	
 	
 func _physics_process(delta: float) -> void:
@@ -26,7 +39,7 @@ func _physics_process(delta: float) -> void:
 	if awake:
 		animated_sprite_2d.play("Patrol")
 	
-	position.x += direction * SPEED * delta
+	position.x += direction * speed * delta
 
 
 

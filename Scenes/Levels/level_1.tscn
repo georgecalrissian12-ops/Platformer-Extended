@@ -1,14 +1,15 @@
 [gd_scene format=4 uid="uid://b1ju0e81tky5o"]
 
-[ext_resource type="PackedScene" uid="uid://cdog3uc8lsk38" path="res://Scenes/checkpoint.tscn" id="1_rb0md"]
+[ext_resource type="PackedScene" uid="uid://cdog3uc8lsk38" path="res://Scenes/World Elements/checkpoint.tscn" id="1_rb0md"]
 [ext_resource type="Texture2D" uid="uid://cgp0draejumjt" path="res://Assets/brackeys_platformer_assets/sprites/world_tileset.png" id="2_u5ghp"]
 [ext_resource type="PackedScene" uid="uid://dwmd6yiam2ge6" path="res://Scenes/death_zone.tscn" id="3_hwvp3"]
-[ext_resource type="PackedScene" uid="uid://gocexuwynk5j" path="res://Scenes/slime.tscn" id="4_afv7b"]
-[ext_resource type="PackedScene" uid="uid://csgof7ieuyt0a" path="res://Scenes/coin.tscn" id="5_7r2dd"]
-[ext_resource type="PackedScene" uid="uid://bvd2gjc1fakc8" path="res://Scenes/spikes.tscn" id="6_k2mw1"]
-[ext_resource type="PackedScene" uid="uid://ds5yajxi1tlbl" path="res://Scenes/platform.tscn" id="7_tjl6l"]
+[ext_resource type="PackedScene" uid="uid://gocexuwynk5j" path="res://Scenes/Enemies/purple_slime.tscn" id="4_afv7b"]
+[ext_resource type="PackedScene" uid="uid://csgof7ieuyt0a" path="res://Scenes/World Elements/coin.tscn" id="5_7r2dd"]
+[ext_resource type="PackedScene" uid="uid://bln3fhhb6cocb" path="res://Scenes/Enemies/green_slime.tscn" id="5_u5ghp"]
+[ext_resource type="PackedScene" uid="uid://bvd2gjc1fakc8" path="res://Scenes/Enemies/spikes.tscn" id="6_k2mw1"]
+[ext_resource type="PackedScene" uid="uid://ds5yajxi1tlbl" path="res://Scenes/World Elements/platform.tscn" id="7_tjl6l"]
 [ext_resource type="PackedScene" uid="uid://dwduh55jo8i0w" path="res://Scenes/player.tscn" id="8_3628d"]
-[ext_resource type="PackedScene" uid="uid://duxyf837ymms8" path="res://Scenes/flag.tscn" id="9_irw6p"]
+[ext_resource type="PackedScene" uid="uid://duxyf837ymms8" path="res://Scenes/World Elements/flag.tscn" id="9_irw6p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qxrlw"]
 texture = ExtResource("2_u5ghp")
@@ -289,10 +290,10 @@ debug_color = Color(0.9843137, 0, 0, 0.41960785)
 [node name="Slimes" type="Node" parent="." unique_id=1259855126]
 
 [node name="Slime" parent="Slimes" unique_id=11349590 instance=ExtResource("4_afv7b")]
-position = Vector2(637, -144)
+position = Vector2(624.355, -144)
 
-[node name="Slime2" parent="Slimes" unique_id=1128082124 instance=ExtResource("4_afv7b")]
-position = Vector2(71, -240)
+[node name="GreenSlime" parent="Slimes" unique_id=1512107737 instance=ExtResource("5_u5ghp")]
+position = Vector2(85, -240)
 
 [node name="Coins" type="Node" parent="." unique_id=374869860]
 
@@ -303,13 +304,13 @@ position = Vector2(216, -56)
 position = Vector2(265, -154)
 
 [node name="Coin2" parent="Coins" unique_id=1226870206 instance=ExtResource("5_7r2dd")]
-position = Vector2(24, -263)
+position = Vector2(696, -212)
 
 [node name="Coin4" parent="Coins" unique_id=1211795216 instance=ExtResource("5_7r2dd")]
-position = Vector2(24, -277)
+position = Vector2(696, -186)
 
 [node name="Coin5" parent="Coins" unique_id=233892809 instance=ExtResource("5_7r2dd")]
-position = Vector2(24, -291)
+position = Vector2(696, -199)
 
 [node name="Spikes" type="Node" parent="." unique_id=2126412456]
 
@@ -345,6 +346,8 @@ position = Vector2(39, -6)
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1549099839]
 scale = Vector2(0.985, 0.985)
 zoom = Vector2(3.51, 3.51)
+limit_top = -512
+limit_bottom = 141
 
 [node name="Flag" parent="." unique_id=1178873475 instance=ExtResource("9_irw6p")]
 position = Vector2(530, -352)

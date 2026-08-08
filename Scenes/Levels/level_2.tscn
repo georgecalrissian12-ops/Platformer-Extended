@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://daa1hxt2q54fp"]
 
-[ext_resource type="PackedScene" uid="uid://cdog3uc8lsk38" path="res://Scenes/checkpoint.tscn" id="1_7qxk6"]
+[ext_resource type="PackedScene" uid="uid://cdog3uc8lsk38" path="res://Scenes/World Elements/checkpoint.tscn" id="1_7qxk6"]
 [ext_resource type="Texture2D" uid="uid://p7fu01gc1m3" path="res://Assets/fourSeasonsPlatformer_ [tileset, version 2.0]/fourSeasonsPlatformer_ [tileset, version 2.0]/midground_/winter_.png" id="1_oylv5"]
 [ext_resource type="Texture2D" uid="uid://cgp0draejumjt" path="res://Assets/brackeys_platformer_assets/sprites/world_tileset.png" id="1_ucdhh"]
 [ext_resource type="Texture2D" uid="uid://cbhf6grt4mspt" path="res://Assets/fourSeasonsPlatformer_ [tileset, version 2.0]/fourSeasonsPlatformer_ [tileset, version 2.0]/foreground_/foreground_.png" id="3_8qsmg"]
